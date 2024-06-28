@@ -1,0 +1,12 @@
+{% extends "ob_app/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<h3>New Employees:</h3>
+<ul>
+{% for ne in newEmployee %}
+        <li><a href="{% url 'newemployee-details' ne.pk %}">{{ne}}</a></li>
+{% endfor %}
+</ul>
+<a href="{% url 'newemployee-create' %}">Add new employee</a>
+{% load static %}  <script src="{% static 'js/forms.js' %}"></script> {% endblock content %}

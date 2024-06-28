@@ -1,0 +1,13 @@
+{% extends "ob_app/base.html" %}
+
+{% block content %}
+<h1>Current Processes</h1>
+<ul>
+{% for allkey in object_list %}
+        <li><a href="{% url 'allkeys-update' allkey.pk %}">{{allkey.newEmployeeID}}</a></li>
+{% empty %}
+    <li><a href="{% url 'newemployee-create'%}"> Create </a> No articles yet. </li>
+{% endfor %}
+</ul>
+
+{% load static %}  <script src="{% static 'js/forms.js' %}"></script> {% endblock content %}

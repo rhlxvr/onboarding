@@ -1,0 +1,23 @@
+{% extends "ob_app/base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+<h4>To start the Onboarding Process, create the New Employee</h4><br>
+<form method="post" action="{% url 'newemployee-create' %}">{% csrf_token %}
+    <div>
+        {{ form.firstname|as_crispy_field }}
+    </div>
+    <div>
+        {{ form.lastname|as_crispy_field }}
+    </div>
+    <div>
+        {{ form.role|as_crispy_field }}
+    </div>
+    <br>
+    <input type="submit" class="btn btn-primary" value="Save">
+</form>
+
+{% load static %}
+<script src="{% static 'js/forms.js' %}"></script>
+{% endblock content %}

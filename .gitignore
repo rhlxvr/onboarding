@@ -1,0 +1,6 @@
+credentials
+.cache-*
+.idea/
+*.json
+.*pyc
+__pycache__

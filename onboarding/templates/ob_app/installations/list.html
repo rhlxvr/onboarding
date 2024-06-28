@@ -1,0 +1,12 @@
+{% extends "ob_app/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<h3>installations:</h3>
+<ul>
+{% for m in installations %}
+        <li><a href="{% url 'installations-details' m.pk %}">{{m}}</a></li>
+{% endfor %}
+</ul>
+<a href="{%  url 'installations-create' %}">Add new installations</a>
+{% load static %}  <script src="{% static 'js/forms.js' %}"></script> {% endblock content %}

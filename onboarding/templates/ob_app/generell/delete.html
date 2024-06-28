@@ -1,0 +1,9 @@
+{% extends "ob_app/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<form method="post">{% csrf_token %}
+    <p>Are you sure you want to delete "{{ object }}"?</p>
+    {{ form|crispy }}
+    <input class="btn btn-danger" type="submit" value="Confirm">
+</form>
+{% load static %}  <script src="{% static 'js/forms.js' %}"></script> {% endblock content %}

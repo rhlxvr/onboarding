@@ -1,0 +1,7 @@
+setup.py
+onboarding.egg-info/PKG-INFO
+onboarding.egg-info/SOURCES.txt
+onboarding.egg-info/dependency_links.txt
+onboarding.egg-info/entry_points.txt
+onboarding.egg-info/requires.txt
+onboarding.egg-info/top_level.txt

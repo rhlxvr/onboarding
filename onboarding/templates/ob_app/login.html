@@ -1,0 +1,26 @@
+{# login.html #}
+{% extends "ob_app/base.html" %}
+{# verwendet das base.html Template von ob_app #}
+
+{% block content %}
+{% load static %}
+{# lädt die static tags #}
+
+<div class="inputmask align-items-center">
+    <form method='POST'>
+        {% csrf_token %}
+        {# fügt CSRF-Token ein für Sicherheitszwecke #}
+        <h1 class="h3 mb-3 font-weight-normal">Log in</h1><br>
+        <label for="inputText" class="sr-only">Username</label>
+        <input type="text" id="inputText" class="form-control" placeholder="Enter Username" name="username" required><br>
+        {# Eingabefeld für den Benutzernamen #}
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
+        {# Eingabefeld für das Passwort #}
+        <br><br>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        {# Anmeldebutton #}
+    </form>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,45 @@
+{% extends "ob_app/base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+ <h3>Update {{ object.newEmployeeID.lastname }} {{ object.newEmployeeID.firstname }}</h3>
+
+<div class="row">
+    <div class="col">
+        <form method="post" action="{% url 'allkeys-update' object.pk %}"> {% csrf_token %}
+            <div class="customselectfield">
+                {{ form.newEmployeeID|as_crispy_field }}
+            </div>
+            <div class="customselectfield">
+                {{ form.employeeID|as_crispy_field }}
+            </div>
+            <div class="customselectfield">
+                {{ form.licenseIDS|as_crispy_field }}
+            </div>
+            <div class="customselectfield">
+                {{ form.materialIDS|as_crispy_field }}
+            </div>
+            <div class="customselectfield">
+                {{ form.accountIDS|as_crispy_field }}
+            </div>
+            <div class="customselectfield">
+                {{ form.otherIDS|as_crispy_field }}
+            </div>
+            <div class="customselectfield">
+                {{ form.installationIDS|as_crispy_field }}
+            </div>
+            <input type="submit" class="btn btn-primary" value="Save">
+            <a class="btn btn-danger" href="{% url 'allkeys-delete' object.pk %}">delete</a>
+            <input type="button" value="Go back!" class="btn btn-link" onclick="history.back()">
+        </form>
+    </div>
+    <div class="col-3">
+        <ul>
+            <li><span class="color-grey"></span>Erledigt</li>
+            <li><span class="color-yellow"></span>Noch zu erledigen</li>
+        </ul>
+    </div>
+</div>
+
+<script src="{% static 'js/forms.js' %}"></script>
+{% endblock content %}

@@ -1,0 +1,12 @@
+{% extends "ob_app/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<h3>others:</h3>
+<ul>
+{% for other in others %}
+        <li><a href="{% url 'others-details' other.pk %}">{{other}}</a></li>
+{% endfor %}
+</ul>
+<a href="{%  url 'others-create' %}">Add new others</a>
+{% load static %}  <script src="{% static 'js/forms.js' %}"></script> {% endblock content %}

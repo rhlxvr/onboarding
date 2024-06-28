@@ -1,0 +1,20 @@
+{# logout.html #}
+{% extends "ob_app/base.html" %}
+{# verwendet das base.html Template von ob_app #}
+
+{% block content %}
+{% load static %}
+{# lädt die static tags #}
+
+<div class="inputmask">
+    <h2>You have been logged out</h2>
+    {# Nachricht, dass der Benutzer abgemeldet wurde #}
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            <a href="/login/?next=/home/">Log In Again</a>
+            {# Link zur erneuten Anmeldung #}
+        </small>
+    </div>
+</div>
+
+{% endblock content %}

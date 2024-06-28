@@ -1,0 +1,10 @@
+{% extends "ob_app/base.html" %}
+
+{% block content %}
+ Details for new employee: {{ object }} <br><br>
+
+
+    <a class="btn btn-primary" href="{% url 'employee-update' object.pk %}">update</a>
+    <a class ="btn btn-danger" href="{% url 'employee-delete' object.pk %}">delete</a><br>
+
+{% load static %}  <script src="{% static 'js/forms.js' %}"></script> {% endblock content %}

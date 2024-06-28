@@ -1,0 +1,12 @@
+{% extends "ob_app/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<h3>roles:</h3>
+<ul>
+{% for role in roles %}
+        <li><a href="{% url 'roles-details' role.pk %}">{{role}}</a></li>
+{% endfor %}
+</ul>
+<a href="{%  url 'roles-create' %}">Add new roles</a>
+{% load static %}  <script src="{% static 'js/forms.js' %}"></script> {% endblock content %}

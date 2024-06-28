@@ -1,0 +1,13 @@
+{% extends "ob_app/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<h3>Add Installations</h3>
+<form method="post" target="{% url 'installations-create' %}">{% csrf_token %}
+    {{ form|crispy }}
+    <br>
+    <input type="submit" class="btn btn-primary" value="Save">
+</form>
+    <br>
+<a href="{% url 'installations-list' %}">Show existing installations</a>
+{% load static %}  <script src="{% static 'js/forms.js' %}"></script> {% endblock content %}

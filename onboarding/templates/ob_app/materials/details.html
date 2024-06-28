@@ -1,0 +1,9 @@
+{% extends "ob_app/base.html" %}
+
+{% block content %}
+ <p>Details for new materials: {{ object }}</p>
+
+    <a class="btn btn-primary" href="{% url 'materials-update' object.pk %}">update</a>
+    <a class ="btn btn-danger" href="{% url 'materials-delete' object.pk %}">delete</a><br>
+
+{% load static %}  <script src="{% static 'js/forms.js' %}"></script> {% endblock content %}

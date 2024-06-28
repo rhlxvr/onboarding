@@ -1,0 +1,60 @@
+{% extends "ob_app/base.html" %}
+{# erweitert das base.html Template von ob_app #}
+
+{% block content %}
+{# beginnt den content Block #}
+
+<h1>Onboarding</h1>
+<p class="font-weight-normal"></p>
+{% if user.is_authenticated %}
+<p class="font-weight-normal"></p>
+<p>Welcome {{ user.username }} !!!</p>
+{# zeigt den Benutzernamen, wenn der User eingeloggt ist #}
+{% else %}
+<a href="/login">Login</a>
+{# Login-Link, wenn der User nicht eingeloggt ist #}
+{% endif %}
+
+<fieldset>
+    <h5><a href="{% url 'newemployee-create' %}">Begin the Onboarding</a></h5>
+    {# Link zur Seite für den Beginn des Onboardings #}
+
+    <p>
+        <a href="{% url 'allkeys-list' %}">Show current processes</a>
+        {# Link zur Seite mit den aktuellen Prozessen #}
+    </p>
+</fieldset>
+<hr>
+<h5><a href="{% url 'allkeys-list' %}">Edit Current Processes</a><br></h5>
+{# Link zur Seite zum Bearbeiten der aktuellen Prozesse #}
+
+<hr>
+
+{% if user.is_superuser %}
+<h5>Extra:</h5>
+<p>
+    <a href="{% url 'materials-create' %}">Add materials</a><br>
+    <a href="{% url 'licenses-create' %}">Add licenses</a><br>
+    <a href="{% url 'accounts-create' %}">Add accounts</a><br>
+    <a href="{% url 'others-create' %}">Add others</a><br>
+    <a href="{% url 'employee-create' %}">Add Employee</a><br>
+    <a href="{% url 'newemployee-create' %}">Add Employee</a><br>
+    {# Links zu den Seiten zum Hinzufügen von Materialien, Lizenzen, Konten, etc., nur sichtbar für Superuser #}
+</p>
+{% endif %}
+<h5>Lists:</h5>
+<p>
+    <a href="{% url 'employee-list' %}">Employee List</a><br>
+    <a href="{% url 'materials-list' %}">Materials List</a><br>
+    <a href="{% url 'licenses-list' %}">Licenses List</a><br>
+    <a href="{% url 'accounts-list' %}">Accounts List</a><br>
+    <a href="{% url 'others-list' %}">Others List</a><br>
+    <a href="{% url 'newemployee-list' %}">New Employee List</a><br>
+    <a href="{% url 'roles-list' %}">Roles List</a><br>
+    {# Links zu den verschiedenen Listen-Seiten #}
+</p>
+
+{% load static %}
+<script src="{% static 'js/forms.js' %}"></script>
+{# lädt das forms.js Skript #}
+{% endblock content %}

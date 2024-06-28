@@ -1,0 +1,12 @@
+{% extends "ob_app/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<h3>licenses:</h3>
+<ul>
+{% for lic in licenses %}
+        <li><a href="{% url 'licenses-details' lic.pk %}">{{lic}}</a></li>
+{% endfor %}
+</ul>
+<a href="{%  url 'licenses-create' %}">Add new license</a>
+{% load static %}  <script src="{% static 'js/forms.js' %}"></script> {% endblock content %}

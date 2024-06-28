@@ -1,0 +1,7 @@
+setup.py
+obapp.egg-info/PKG-INFO
+obapp.egg-info/SOURCES.txt
+obapp.egg-info/dependency_links.txt
+obapp.egg-info/entry_points.txt
+obapp.egg-info/requires.txt
+obapp.egg-info/top_level.txt

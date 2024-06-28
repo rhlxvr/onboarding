@@ -1,0 +1,9 @@
+{% extends "ob_app/base.html" %}
+
+{% block content %}
+ <p>Details for new roles: {{ object }}</p>
+    <ul>
+    <li><a href="{% url 'roles-update' object.pk %}">update</a><br></li>
+    <li><a href="{% url 'roles-delete' object.pk %}">delete</a><br></li>
+    </ul>
+{% load static %}  <script src="{% static 'js/forms.js' %}"></script> {% endblock content %}

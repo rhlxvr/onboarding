@@ -1,0 +1,18 @@
+{% extends "ob_app/base.html" %}
+
+{% block content %}
+{% if user.is_superuser %}
+    <h5>Extra:</h5>
+    <p>
+    <a href="{%  url 'newemployee-list' %}">Show new employees</a><br>
+    <a href="{%  url 'materials-create' %}">Add materials</a><br>
+    <a href="{%  url 'licenses-create' %}">Add licenses</a><br>
+    <a href="{%  url 'accounts-create' %}">Add accounts</a><br>
+    <a href="{%  url 'others-create' %}">Add others</a><br>
+    </p>
+    {% endif %}
+
+
+{% load static %}
+<script src="{% static 'js/forms.js' %}"></script>
+{% endblock content %}

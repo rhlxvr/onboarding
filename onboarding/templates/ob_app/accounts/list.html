@@ -1,0 +1,12 @@
+{% extends "ob_app/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<h3>accounts:</h3>
+<ul>
+{% for acc in accounts %}
+        <li><a href="{% url 'accounts-details' acc.pk %}">{{acc}}</a></li>
+{% endfor %}
+</ul>
+<a href="{%  url 'accounts-create' %}">Add new accounts</a>
+{% load static %}  <script src="{% static 'js/forms.js' %}"></script> {% endblock content %}

@@ -1,0 +1,12 @@
+{% extends "ob_app/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<h3>materials:</h3>
+<ul>
+{% for m in materials %}
+        <li><a href="{% url 'materials-details' m.pk %}">{{m}}</a></li>
+{% endfor %}
+</ul>
+<a href="{%  url 'materials-create' %}">Add new material</a>
+{% load static %}  <script src="{% static 'js/forms.js' %}"></script> {% endblock content %}

@@ -1,0 +1,21 @@
+{% extends "ob_app/base.html" %}
+{# verwendet das base.html Template von ob_app #}
+
+{% load crispy_forms_tags %}
+{# lädt crispy forms tags #}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    {# fügt CSRF-Token ein für Sicherheitszwecke #}
+    <p>Are you sure you want to delete "{{ object.newEmployeeID.lastname }}"?</p>
+    {# Frage zur Bestätigung der Löschung mit dem Nachnamen des neuen Mitarbeiters #}
+    {{ form|crispy }}
+    {# rendert das Formular mit crispy forms #}
+    <input class="btn btn-danger" type="submit" value="Confirm">
+    {# Bestätigungsbutton für die Löschung #}
+</form>
+{% load static %}
+<script src="{% static 'js/forms.js' %}"></script>
+{# lädt das forms.js Skript #}
+{% endblock content %}
